@@ -2,11 +2,9 @@ package com.springbootrestapi.emloyeemanagement.service;
 import java.util.List;
 import java.util.Optional;
 
-import org.springframework.stereotype.Service;
 
 import com.springbootrestapi.emloyeemanagement.entity.User;
 
-@Service
 public interface UserService {
 	public List<User> findAll();
 

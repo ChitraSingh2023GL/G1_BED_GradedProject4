@@ -4,17 +4,18 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
-import com.springbootrestapi.emloyeemanagement.dao.RoleRepository;
+import com.springbootrestapi.emloyeemanagement.dao.RolesRepository;
 import com.springbootrestapi.emloyeemanagement.entity.Roles;
 import com.springbootrestapi.emloyeemanagement.service.RoleService;
 
 import jakarta.transaction.Transactional;
-
+@Service
 public class RoleServiceImp implements RoleService {
 
 	@Autowired
-	RoleRepository roleRepository;
+	RolesRepository roleRepository;
 
 	@Override
 	@Transactional

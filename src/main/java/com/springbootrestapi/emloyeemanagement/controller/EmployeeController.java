@@ -1,12 +1,7 @@
 package com.springbootrestapi.emloyeemanagement.controller;
-
-import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -25,13 +20,8 @@ import com.springbootrestapi.emloyeemanagement.service.EmployeeService;
 @RestController
 @RequestMapping("/api")
 public class EmployeeController {
-
-	private EmployeeService employeeService;
-
 	@Autowired
-	public EmployeeController(EmployeeService theEmployeeService) {
-		employeeService = theEmployeeService;
-	}
+	private EmployeeService employeeService;
 
 	// 2. Your application should be able to add Users in the db which can be used
 	// for authentication purposes.
@@ -53,9 +43,9 @@ public class EmployeeController {
 	// stored in the database.
 	@GetMapping("/employees/employeesList")
 	public List<Employee> findAll() {
-		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+		/*Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 		Collection<? extends GrantedAuthority> currentPrincipalName = authentication.getAuthorities();
-		//System.out.println(currentPrincipalName);
+		//System.out.println(currentPrincipalName);*/
 		return employeeService.findAll();
 	}
 

@@ -4,13 +4,14 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.springbootrestapi.emloyeemanagement.dao.UserRepository;
 import com.springbootrestapi.emloyeemanagement.entity.User;
 import com.springbootrestapi.emloyeemanagement.service.UserService;
 
 import jakarta.transaction.Transactional;
-
+@Service
 public class UserServiceImp implements UserService{
 	@Autowired
 	UserRepository userRepository;
